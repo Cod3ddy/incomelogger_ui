@@ -15,24 +15,35 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    super.initState();
     firstnameFieldController = TextEditingController();
     surnameFieldController = TextEditingController();
     incomeFieldController = TextEditingController();
+    super.initState();
   }
 
   @override
   void dispose() {
-    super.dispose();
     firstnameFieldController.dispose();
     surnameFieldController.dispose();
     incomeFieldController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+      appBar: AppBar(
+        leading: Icon(Icons.abc),
+        title: const Text("Home"),
+        actions: const [
+          Icon(Icons.add),
+        ],
+      ),
+      drawer: const Drawer(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.home),
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 40, 16, 0),
         child: Column(
